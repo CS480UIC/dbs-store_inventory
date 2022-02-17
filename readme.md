@@ -6,6 +6,6 @@
 store_inventory
 # Author(s)
 Tyler Limbach
-AUTHOR2
+Mirac Kara
 # Database description
 Write the database description and requirements here
