@@ -8,6 +8,10 @@
   > Synonyms: Alley, walkway, location, avenue 
   > Description: Location of item
 
+  Entity Name: item_amount
+  > Synonyms: inventory, stock 
+  > Description: Amount of items in inventory
+  
   Entity Name: item_expiration_date
   > Synonyms: None 
   > Description: Date of expiration
@@ -21,6 +25,10 @@
   Relationship: expiration_date-on-sku
   > Minima: one-one
   > Maxima: one-one
+
+  Relationship: amount-of-sku
+  > Minima: zero-zero
+  > Maxima: many-one
  
  <h1> Attributes </h1>
  
@@ -28,3 +36,4 @@
   > Attribute: item_sku M-1(1)
   > Attribute: item_expiration_date  M-M(1)
   > Attribute: item_aisle M-M (0)
+  > Attribute: item_amount M-M (0)
