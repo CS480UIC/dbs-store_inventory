@@ -20,7 +20,23 @@
 
   > Description: Date of expiration
 
+  
+  Entity Name: store_donation_date
+  > Synonyms: 
+
+  > Description: The length of time before an expiration date an item should be donated. (Ex: 1 = one week before expiration date, 2 = two weeks before expiration       date)
+ 
+ Entity Name: store_name
+ > Synonyms: Store Numebr
+
+ > Description: Name of store
+
 <h1> Relationship </h1>
+
+  Relationship: inventory-in-store:
+  > Minima: one-one
+
+  > Maxima: one-one
 
   Relationship: sku-in-aisle
   > Minima: zero-one
@@ -47,3 +63,11 @@
   > Attribute: item_aisle M-M (0)
   
   > Attribute: item_amount M-M (0)
+
+  Table Name: store
+  > Attribute: store_name 1-1(1)
+  
+  > Attribute: store_inventory 1-1(1)
+  
+  > Attribute: store_donation_date 1-1 (1)
+  
