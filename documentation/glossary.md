@@ -1,56 +1,36 @@
 <h1> Entity </h1>
   
-  Entity Name: item_sku
-  > Synonyms: Barcode, Serial Number, 
+  Entity Name: store
+  > Synonyms: resturaunt, supermarket, gas station 
  
-  > Description: A way to give an identity to unique items
+  > Description: A location in which pershable items are sold
 
-  Entity Name: item_aisle
-  > Synonyms: Alley, walkway, location, avenue 
+  Entity Name: inventory
+  > Synonyms: Stock 
  
-  > Description: Location of item
+  > Description: A list of items present at each store
 
-  Entity Name: item_amount
-  > Synonyms: inventory, stock 
+  Entity Name: donation_items
+  > Synonyms: None
 
-  > Description: Amount of items in inventory
-  
-  Entity Name: item_expiration_date
-  > Synonyms: None 
-
-  > Description: Date of expiration
-
-  
-  Entity Name: store_donation_date
-  > Synonyms: 
-
-  > Description: The length of time before an expiration date an item should be donated. (Ex: 1 = one week before expiration date, 2 = two weeks before expiration       date)
- 
- Entity Name: store_name
- > Synonyms: Store Numebr
-
- > Description: Name of store
+  > Description: items that have been marked for donation
 
 <h1> Relationship </h1>
 
   Relationship: inventory-in-store:
-  > Minima: one-one
-
-  > Maxima: one-one
-
-  Relationship: sku-in-aisle
-  > Minima: zero-one
- 
-  > Maxima: many-many
-
-  Relationship: expiration_date-on-sku
-  > Minima: one-one
- 
-  > Maxima: one-one
-
-  Relationship: amount-of-sku
   > Minima: zero-zero
+
+  > Maxima: one-one
+ 
+ 
+  Relationship: items-in-donation:
+  > Minima: zero-zero
+
+  > Maxima: many-one
   
+  Relationship: donation-piles-in-store:
+  > Minima: zero-one
+
   > Maxima: many-one
  
  <h1> Attributes </h1>
@@ -70,4 +50,11 @@
   > Attribute: store_inventory 1-1(1)
   
   > Attribute: store_donation_date 1-1 (1)
+
+  Table Name: donation_items
+  > Attribute: donation_sku M-1(1)
+  
+  > Attribute: donation_date M-1(1)
+  
+  > Attribute: donation_amount M-M (0)
   
