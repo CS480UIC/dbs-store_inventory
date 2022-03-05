@@ -36,25 +36,29 @@
  <h1> Attributes </h1>
  
   Table Name: inventory
-  > Attribute: item_sku M-1(1)
+  > Attribute: inventory_id 1-1(1) (PK UNIQUE AUTOINCREMENT NOT NULL INT)
   
-  > Attribute: item_expiration_date  M-M(1)
+  > Attribute: item_sku M-1(1) (UNIQUE NOT NULL INT)
   
-  > Attribute: item_aisle M-M (0)
+  > Attribute: item_expiration_date  M-M(1) (NOT NULL DATETIME)
   
-  > Attribute: item_amount M-M (0)
+  > Attribute: item_aisle M-M (0) (NOT NULL VARCHAR)
+  
+  > Attribute: item_amount M-M (0) (INT)
 
   Table Name: store
-  > Attribute: store_name 1-1(1)
+  > Attribute: store_number 1-1(1) (PK UNIQUE NOT NULL INT)
   
-  > Attribute: store_inventory 1-1(1)
+  > Attribute: store_inventory 1-1(1) (NOT NULL INT)
   
-  > Attribute: store_donation_date 1-1 (1)
+  > Attribute: store_donation_date 1-1 (1) (NOT NULL DATETIME)
 
   Table Name: donation_items
-  > Attribute: donation_sku M-1(1)
+  > Attribute: donation_store 1-1(1) (PK UNIQUE NOT NULL INT)
   
-  > Attribute: donation_date M-1(1)
+  > Attribute: donation_sku M-1(1) (UNIQUE NOT NULL INT)
   
-  > Attribute: donation_amount M-M (0)
+  > Attribute: donation_date M-1(1) (NOT NULL INT)
+  
+  > Attribute: donation_amount M-M (0) (NOT NULL DATETIME)
   
