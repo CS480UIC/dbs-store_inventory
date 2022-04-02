@@ -16,35 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `donation_items`
---
-
-DROP TABLE IF EXISTS `donation_items`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `donation_items` (
-  `donation_store` int NOT NULL,
-  `donation_sku` int NOT NULL,
-  `donation_amount` int NOT NULL,
-  `donation_date` datetime NOT NULL,
-  PRIMARY KEY (`donation_store`),
-  KEY `donation_sku` (`donation_sku`),
-  CONSTRAINT `donation_items_ibfk_1` FOREIGN KEY (`donation_sku`) REFERENCES `inventory` (`item_sku`),
-  CONSTRAINT `donation_items_ibfk_2` FOREIGN KEY (`donation_store`) REFERENCES `store` (`store_number`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `donation_items`
---
-
-LOCK TABLES `donation_items` WRITE;
-/*!40000 ALTER TABLE `donation_items` DISABLE KEYS */;
-INSERT INTO `donation_items` VALUES (324,12345,4,'2022-04-20 00:00:00'),(371,23456,1,'2022-05-30 00:00:00'),(961,43852,0,'2022-05-26 00:00:00');
-/*!40000 ALTER TABLE `donation_items` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `inventory`
 --
 
@@ -70,7 +41,6 @@ LOCK TABLES `inventory` WRITE;
 INSERT INTO `inventory` VALUES (1,12345,'2022-04-21 00:00:00',20),(2,23456,'2022-05-31 00:00:00',4),(3,43852,'2022-05-27 00:00:00',0);
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
-
 
 --
 -- Table structure for table `store`
@@ -99,6 +69,41 @@ LOCK TABLES `store` WRITE;
 INSERT INTO `store` VALUES (324,1,'2022-04-18 00:00:00'),(371,2,'2022-05-28 00:00:00'),(961,3,'2022-05-24 00:00:00');
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+
+--
+-- Table structure for table `donation_items`
+--
+
+DROP TABLE IF EXISTS `donation_items`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `donation_items` (
+  `donation_store` int NOT NULL,
+  `donation_sku` int NOT NULL,
+  `donation_amount` int NOT NULL,
+  `donation_date` datetime NOT NULL,
+  PRIMARY KEY (`donation_store`),
+  KEY `donation_sku` (`donation_sku`),
+  CONSTRAINT `donation_items_ibfk_1` FOREIGN KEY (`donation_sku`) REFERENCES `inventory` (`item_sku`),
+  CONSTRAINT `donation_items_ibfk_2` FOREIGN KEY (`donation_store`) REFERENCES `store` (`store_number`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `donation_items`
+--
+
+LOCK TABLES `donation_items` WRITE;
+/*!40000 ALTER TABLE `donation_items` DISABLE KEYS */;
+INSERT INTO `donation_items` VALUES (324,12345,4,'2022-04-20 00:00:00'),(371,23456,1,'2022-05-30 00:00:00'),(961,43852,0,'2022-05-26 00:00:00');
+/*!40000 ALTER TABLE `donation_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
