@@ -1,3 +1,5 @@
+-- N = 2
+
 -- Minimum N simple queries. 
 -- A simple query searches data in one table using logic operators in the condition, and orders the result by a particular column.
 
