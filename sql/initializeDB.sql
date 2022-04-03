@@ -53,10 +53,13 @@ CREATE TABLE `store` (
   `store_number` int NOT NULL,
   `store_inventory` smallint NOT NULL,
   `store_donation_date` datetime NOT NULL,
+  `store_location` int NOT NULL,
   PRIMARY KEY (`store_number`),
   UNIQUE KEY `store_number` (`store_number`),
+  KEY `store_location` (`store_location`),
   KEY `store_inventory` (`store_inventory`),
-  CONSTRAINT `store_ibfk_1` FOREIGN KEY (`store_inventory`) REFERENCES `inventory` (`inventory_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `store_ibfk_1` FOREIGN KEY (`store_inventory`) REFERENCES `inventory` (`inventory_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `store_ibfk_2` FOREIGN KEY (`store_location`) REFERENCES `location` (`location_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -66,7 +69,7 @@ CREATE TABLE `store` (
 
 LOCK TABLES `store` WRITE;
 /*!40000 ALTER TABLE `store` DISABLE KEYS */;
-INSERT INTO `store` VALUES (324,1,'2022-04-18 00:00:00'),(371,2,'2022-05-28 00:00:00'),(961,3,'2022-05-24 00:00:00');
+INSERT INTO `store` VALUES (324,1,'2022-04-18 00:00:00',1),(371,2,'2022-05-28 00:00:00',2),(961,3,'2022-05-24 00:00:00',3);
 /*!40000 ALTER TABLE `store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,10 +87,13 @@ CREATE TABLE `donation_items` (
   `donation_sku` int NOT NULL,
   `donation_amount` int NOT NULL,
   `donation_date` datetime NOT NULL,
+  `donation_charity` int NOT NULL,
   PRIMARY KEY (`donation_store`),
   KEY `donation_sku` (`donation_sku`),
+  KEY `donation_charity` (`donation_charity`),
   CONSTRAINT `donation_items_ibfk_1` FOREIGN KEY (`donation_sku`) REFERENCES `inventory` (`item_sku`),
-  CONSTRAINT `donation_items_ibfk_2` FOREIGN KEY (`donation_store`) REFERENCES `store` (`store_number`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `donation_items_ibfk_2` FOREIGN KEY (`donation_store`) REFERENCES `store` (`store_number`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `donation_items_ibfk_3` FOREIGN KEY (`donation_charity`) REFERENCES `charity` (`charity_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,6 +108,58 @@ INSERT INTO `donation_items` VALUES (324,12345,4,'2022-04-20 00:00:00'),(371,234
 UNLOCK TABLES;
 
 
+--
+-- Table structure for table `location`
+--
+
+DROP TABLE IF EXISTS `location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `location` (
+  `location_id` int NOT NULL,
+  `location_city` varchar(50) NOT NULL,
+  `location_state` char(2) NOT NULL,
+  PRIMARY KEY (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `donation_items`
+--
+
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `donation_items` DISABLE KEYS */;
+INSERT INTO `location` VALUES (1,'Chicago','IL'),(2,'Los Angeles','CA'),(3,'Boulder','CO')
+/*!40000 ALTER TABLE `donation_items` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `charity`
+--
+
+DROP TABLE IF EXISTS `charity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `charity` (
+  `charity_id` int NOT NULL,
+  `charity_name` varchar(50) NOT NULL,
+  `charity_location` int NOT NULL,
+  PRIMARY KEY (`location_id`),
+  KEY `charity_location` (`charity_location`),
+  CONSTRAINT `charity_ibfk_1` FOREIGN KEY (`charity_location`) REFERENCES `location` (`location_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `donation_items`
+--
+
+LOCK TABLES `charity` WRITE;
+/*!40000 ALTER TABLE `donation_items` DISABLE KEYS */;
+INSERT INTO `charity` VALUES (1,'Food For Children',1),(2,'Jasons House',2),(3,'The Goats Gifts',3);
+/*!40000 ALTER TABLE `donation_items` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
