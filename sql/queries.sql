@@ -24,6 +24,8 @@ order by abs(now() - date) desc;
 select  * from inventory
 order by MAX(VAL(inventory.item_amount)) asc;
 
+select * from charity
+where charity_name LIKE '%The%';
 
 
 -- Minimum N complex queries.
