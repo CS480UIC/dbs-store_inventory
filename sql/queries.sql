@@ -1,5 +1,3 @@
--- N = 2
-
 -- Minimum N simple queries. 
 -- A simple query searches data in one table using logic operators in the condition, and orders the result by a particular column.
 
@@ -18,6 +16,13 @@ order by donation_store;
 --  From the N queries, at least one should use a string function.
 --  From the N queries, at least one should use a date and time function.
 --  From the N queries, at least one should group rows with identical values into a set of summary rows and filter group results (GROUP BY and HAVING clauses).
+
+
+select  * from    item_expiration_date
+order by abs(now() - date) desc;
+
+select  * from inventory
+order by MAX(VAL(inventory.item_amount)) asc;
 
 
 -- Minimum N complex queries.
