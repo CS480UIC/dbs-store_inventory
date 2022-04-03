@@ -18,11 +18,12 @@ order by donation_store;
 --  From the N queries, at least one should group rows with identical values into a set of summary rows and filter group results (GROUP BY and HAVING clauses).
 
 
-select  * from    item_expiration_date
+select  * from item_expiration_date
 order by abs(now() - date) desc;
 
 select  * from inventory
 order by MAX(VAL(inventory.item_amount)) asc;
+
 
 
 -- Minimum N complex queries.
@@ -30,3 +31,8 @@ order by MAX(VAL(inventory.item_amount)) asc;
 --  From the N queries, at least one should use a join (any type of join).
 --  From the N queries, at least one should use a correlated subquery (without EXIST).
 --  From the N queries, at least one should use a correlated subquery that uses the EXIST clause
+
+SELECT store.store_donation_date, store.store_number, donation_items.donation_sku
+FROM store
+INNER JOIN donation_items on donation_items.donation_date=store.store_donation_date;
+
