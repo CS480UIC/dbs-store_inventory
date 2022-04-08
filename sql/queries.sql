@@ -18,7 +18,7 @@ order by donation_store;
 --  From the N queries, at least one should group rows with identical values into a set of summary rows and filter group results (GROUP BY and HAVING clauses).
 
 
-select  * from item_expiration_date
+select item_expiration_date from inventory
 order by abs(now() - date) desc;
 
 select  * from inventory
@@ -26,6 +26,9 @@ order by MAX(VAL(inventory.item_amount)) asc;
 
 select * from charity
 where charity_name LIKE '%The%';
+
+select donation_store from donation_items
+group by donation_store having COUNT(donation_store) > 1;
 
 
 -- Minimum N complex queries.
@@ -37,4 +40,16 @@ where charity_name LIKE '%The%';
 SELECT store.store_donation_date, store.store_number, donation_items.donation_sku
 FROM store
 INNER JOIN donation_items on donation_items.donation_date=store.store_donation_date;
+
+SELECT * FROM donation_items
+  WHERE donation_charity = ANY (SELECT charity_id FROM charity
+                       WHERE donation_items.donation_charity = charity.charity_id)
+
+select charity_id, charity_name from charity
+where exists
+(
+    select * from location
+    where charity.charity_location = location.location_id
+    and location_state = "CA"
+);
 
