@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://JAVA.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>CS480 Demo</display-name>
+    <servlet>
+    <description></description>
+    <display-name>Entity1ServletCreate</display-name>
+    <servlet-name>Entity1ServletCreate</servlet-name>
+    <servlet-class>entity1.web.servlet.Entity1ServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Entity1ServletCreate</servlet-name>
+    <url-pattern>/Entity1ServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Entity1ServletRead</display-name>
+    <servlet-name>Entity1ServletRead</servlet-name>
+    <servlet-class>entity1.web.servlet.Entity1ServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Entity1ServletRead</servlet-name>
+    <url-pattern>/Entity1ServletRead</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>Entity1ServletUpdate</display-name>
+    <servlet-name>Entity1ServletUpdate</servlet-name>
+    <servlet-class>entity1.web.servlet.Entity1ServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Entity1ServletUpdate</servlet-name>
+    <url-pattern>/Entity1ServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>Entity1ServletDelete</display-name>
+    <servlet-name>Entity1ServletDelete</servlet-name>
+    <servlet-class>entity1.web.servlet.Entity1ServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Entity1ServletDelete</servlet-name>
+    <url-pattern>/Entity1ServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>LocationServletCreate</display-name>
+    <servlet-name>LocationServletCreate</servlet-name>
+    <servlet-class>location.web.servlet.LocationServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationServletCreate</servlet-name>
+    <url-pattern>/LocationServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LocationServletRead</display-name>
+    <servlet-name>LocationServletRead</servlet-name>
+    <servlet-class>location.web.servlet.LocationServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationServletRead</servlet-name>
+    <url-pattern>/LocationServletRead</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>LocationServletUpdate</display-name>
+    <servlet-name>LocationServletUpdate</servlet-name>
+    <servlet-class>location.web.servlet.LocationServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationServletUpdate</servlet-name>
+    <url-pattern>/LocationServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>LocationServletDelete</display-name>
+    <servlet-name>LocationServletDelete</servlet-name>
+    <servlet-class>location.web.servlet.LocationServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationServletDelete</servlet-name>
+    <url-pattern>/LocationServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>CharityServletCreate</display-name>
+    <servlet-name>CharityServletCreate</servlet-name>
+    <servlet-class>charity.web.servlet.CharityServletCreate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityServletCreate</servlet-name>
+    <url-pattern>/CharityServletCreate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CharityServletRead</display-name>
+    <servlet-name>CharityServletRead</servlet-name>
+    <servlet-class>charity.web.servlet.CharityServletRead</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityServletRead</servlet-name>
+    <url-pattern>/CharityServletRead</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>CharityServletUpdate</display-name>
+    <servlet-name>CharityServletUpdate</servlet-name>
+    <servlet-class>charity.web.servlet.CharityServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityServletUpdate</servlet-name>
+    <url-pattern>/CharityServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>CharityServletDelete</display-name>
+    <servlet-name>CharityServletDelete</servlet-name>
+    <servlet-class>charity.web.servlet.CharityServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityServletDelete</servlet-name>
+    <url-pattern>/CharityServletDelete</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>initializeServlet</display-name>
+    <servlet-name>initializeServlet</servlet-name>
+    <servlet-class>user.web.servlet.initializeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initializeServlet</servlet-name>
+    <url-pattern>/initializeServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>UserServletRegister</display-name>
+    <servlet-name>UserServletRegister</servlet-name>
+    <servlet-class>user.web.servlet.UserServletRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletRegister</servlet-name>
+    <url-pattern>/UserServletRegister</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserServletLogin</display-name>
+    <servlet-name>UserServletLogin</servlet-name>
+    <servlet-class>user.web.servlet.UserServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletLogin</servlet-name>
+    <url-pattern>/UserServletLogin</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>UserServletLogout</display-name>
+    <servlet-name>UserServletLogout</servlet-name>
+    <servlet-class>user.web.servlet.UserServletLogout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletLogout</servlet-name>
+    <url-pattern>/UserServletLogout</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>findAll</display-name>
+    <servlet-name>findAll</servlet-name>
+    
+    <servlet-class>user.web.servlet.findAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findAll</servlet-name>
+    <url-pattern>/findAll</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>CharityfindAll</display-name>
+    <servlet-name>CharityfindAll</servlet-name>
+    
+    <servlet-class>charity.web.servlet.CharityfindAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityfindAll</servlet-name>
+    <url-pattern>/CharityfindAll</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <description></description>
+    <display-name>CharityAggregate</display-name>
+    <servlet-name>CharityAggregate</servlet-name>
+    
+    <servlet-class>charity.web.servlet.CharityAggregate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityAggregate</servlet-name>
+    <url-pattern>/CharityAggregate</url-pattern>
+  </servlet-mapping>
+  
+          <servlet>
+    <description></description>
+    <display-name>CharityComplex</display-name>
+    <servlet-name>CharityComplex</servlet-name>
+    
+    <servlet-class>charity.web.servlet.CharityComplex</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CharityComplex</servlet-name>
+    <url-pattern>/CharityComplex</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <description></description>
+    <display-name>LocationfindAll</display-name>
+    <servlet-name>LocationfindAll</servlet-name>
+    
+    <servlet-class>location.web.servlet.LocationfindAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationfindAll</servlet-name>
+    <url-pattern>/LocationfindAll</url-pattern>
+  </servlet-mapping>
+  
+          <servlet>
+    <description></description>
+    <display-name>LocationSimple</display-name>
+    <servlet-name>LocationSimple</servlet-name>
+    
+    <servlet-class>location.web.servlet.LocationSimple</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationSimple</servlet-name>
+    <url-pattern>/LocationSimple</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

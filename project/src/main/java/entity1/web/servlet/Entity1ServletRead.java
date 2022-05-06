@@ -41,7 +41,7 @@ public class Entity1ServletRead extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Entity1 entity1 = null;
 		try {
-			entity1 = Entity1Dao.findByUsername(request.getParameter("username"));
+			entity1 = Entity1Dao.findByID(request.getParameter("username"));
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -50,7 +50,7 @@ public class Entity1ServletRead extends HttpServlet {
 			e1.printStackTrace();
 		}
 		
-		if(entity1.getUsername()!=null){
+		if(entity1.getInventory_ID()!=null){
 					System.out.println(entity1);
 					request.setAttribute("entity1", entity1);
 					request.getRequestDispatcher("/jsps/entity1/entity1_read_output.jsp").forward(request, response);

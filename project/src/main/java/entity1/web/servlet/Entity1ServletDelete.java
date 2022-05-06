@@ -51,7 +51,7 @@ public class Entity1ServletDelete extends HttpServlet {
 		{
 			try {
 //				entity1dao to Entity1Dao
-				entity1 = Entity1Dao.findByUsername(request.getParameter("username"));
+				entity1 = Entity1Dao.findByID(request.getParameter("username"));
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			} catch (InstantiationException e1) {
@@ -61,7 +61,7 @@ public class Entity1ServletDelete extends HttpServlet {
 			}
 		
 //			Entity1Service entity1service = new Entity1Service();		
-			if(entity1.getUsername()!=null){
+			if(entity1.getInventory_ID()!=null){
 						System.out.println(entity1);
 						request.setAttribute("entity1", entity1);
 						request.getRequestDispatcher("/jsps/entity1/entity1_delete_output.jsp").forward(request, response);

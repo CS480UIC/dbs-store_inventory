@@ -1,6 +1,8 @@
 package entity1.web.servlet;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -48,25 +50,26 @@ public class Entity1ServletCreate extends HttpServlet {
 		List<String> info = new ArrayList<String>();
 		System.out.println(form);
 		for(String name : paramMap.keySet()) {
-			
 			String[] values = paramMap.get(name);
-			info.add(values[0]);
-			System.out.println(name + ": " + Arrays.toString(values));
+			System.out.println(name + ":e " + Arrays.toString(values));
 			System.out.println(info.add(values[0]));
 
 		}
 //		System.out.println("1");
-//		System.out.println(info);
+		System.out.println(info);
 
-		form.setUsername(info.get(1));
+		form.setInventory_ID(info.get(0));
 //		System.out.println("1");
 
-		form.setPassword(info.get(2));
+		form.setItem_SKU(info.get(1));
 //		System.out.println("2");
-
-		form.setEmail(info.get(3));		
-//		System.out.println("3");
 		
+		form.setItem_Expiration_Date(info.get(2));		
+		System.out.println("3e");
+
+		form.setItem_Aisle(info.get(3));	
+		form.setItem_Amount(info.get(4));
+
 		
 		try {
 			System.out.println("3");
