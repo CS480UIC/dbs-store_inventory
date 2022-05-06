@@ -13,6 +13,6 @@ The goal of the project is to help grocery stores cut down on throwing out food 
 
 Requirements:
 
-Python
-
-Django
+Java
+Maven
+MySQL
